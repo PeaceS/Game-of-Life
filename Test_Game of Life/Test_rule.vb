@@ -1,7 +1,9 @@
-﻿Imports System.Text
+﻿Imports System.Drawing
+Imports System.Text
+Imports Game_of_Life
 
 <TestClass()>
-Public Class UnitTest1
+Public Class Test_rule
 
     Private testContextInstance As TestContext
 
@@ -14,7 +16,7 @@ Public Class UnitTest1
             Return testContextInstance
         End Get
         Set(ByVal value As TestContext)
-            testContextInstance = Value
+            testContextInstance = value
         End Set
     End Property
 
@@ -40,9 +42,14 @@ Public Class UnitTest1
     '
 #End Region
 
+    Dim theBoard As New Board()
+
     <TestMethod()>
-    Public Sub TestMethod1()
-        ' TODO: Add test logic here
+    Public Sub LiveCellWithFewerThan2NeighboursWillDies()
+        'Any live cell with fewer than two live neighbours dies, as if caused by under-population
+        Dim pointTest As New Point(1, 1)
+        Dim theCell As New Cell(pointTest)
+        Assert.AreEqual(expected:=Cell.status.live, actual:=theBoard.checkStatus(theCell.location))
     End Sub
 
 End Class

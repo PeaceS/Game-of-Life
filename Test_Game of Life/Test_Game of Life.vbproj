@@ -55,6 +55,7 @@
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
@@ -76,7 +77,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="My Project\AssemblyInfo.vb" />
-    <Compile Include="UnitTest1.vb" />
+    <Compile Include="Test_rule.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Game of Life\Game of Life.vbproj">
+      <Project>{E4BF7C70-B180-4696-BF7C-EB21A4FB0C4B}</Project>
+      <Name>Game of Life</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
